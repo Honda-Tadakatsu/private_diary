@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{% static 'css/one-page-wonder.min.css'%}">
 
-    <link rel="stylesheet" type="text/css" href="{%static'css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static'css\mystyle.css'%}">
 
     {% block head %}{% endblock %}
 
@@ -29,9 +29,33 @@
                 <button class ="nacbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="colaalapse navar-collapse" id="navbarResponsive">
+                 <ul class="navbar-nav mr-auto">
+                     <li class="nav-item {% block active_inquiry %}{% endblock %}">
+                         <a class="nav-link" href="#">INQUIRY</a>
+                     </li>
+                 </ul>
+                 <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                         <a class="nav-link" href="#">Sing Up</a>
+                     </li> 
+                     <li class="nav-item">
+                         <a class="nav-link" href="#">Log In</a>
+                     </li>
+                 </ul>
+                </div>
             </div>
         </nav>
+        {% block header %}{% endblock %}
+        {% block contents %}{% endblock %}
 
+        <footer class="py-5 bg-black">
+            <div class="container">
+                <p class="m-0 text-center text-while small">Copyright &copy; Private Daity 2019</p>
+            </div>
+        </footer>
+        <script src="{% static 'vendor/jquiry/jquiry.min.js'%}"></script>
+        <script src="{% static 'vendor/jquiry/bootstrap/js/min.js'%}"></script>
     </div>
 </head>
 <body>
