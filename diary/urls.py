@@ -1,10 +1,9 @@
-from diary import views
-from django.shortcuts import render
 from django.urls import path
-from django.views import generic
+from . import views
 
 app_name = 'diary'
 urlpatterns = [
-    path('', views.IndexView.as_view() ,name = 'index' ),
-    path('', views.IndexView.as_view() ,name = 'base' ),
+     path('', views.IndexView.as_view() ,name = 'index' ),
+     path('inquiry/', views.InquiryView.as_view() , name= 'inquiry'),
 ]
+
