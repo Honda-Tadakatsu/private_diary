@@ -51,7 +51,7 @@ class DiaryDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = "diary/diary_detail.html"
 
 
-class DiaryDeleteView(LoginRequiredMixin, generic.DetailView):
+class DiaryDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Diary
     template_name = "diary/diary_delete.html"
     success_url = reverse_lazy('diary:diary_list')
